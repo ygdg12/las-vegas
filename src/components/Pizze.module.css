@@ -1,0 +1,359 @@
+.pizze {
+  position: relative;
+  overflow: hidden;
+}
+
+.bgDeco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bigCircle {
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.05);
+}
+
+.bigCircle::before {
+  content: '';
+  position: absolute;
+  inset: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.05);
+}
+
+.smallCircle {
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(193,18,31,0.04) 0%, transparent 70%);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 72px;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: all 0.85s cubic-bezier(0.16,1,0.3,1);
+}
+
+.header.inView {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.tag span {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+.tagLine {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.subtitle {
+  font-size: 17px;
+  color: var(--muted2);
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,0.4));
+}
+
+.divider::after {
+  transform: scaleX(-1);
+}
+
+.dividerIcon {
+  color: var(--gold);
+  font-size: 14px;
+}
+
+/* Showcase layout */
+.showcase {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Feature card */
+.featureCard {
+  position: sticky;
+  top: 100px;
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.featureImg {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+
+.featureImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.featureCard:hover .featureImg img {
+  transform: scale(1.05);
+}
+
+.featureImgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(24,24,24,0.9) 100%);
+}
+
+.featureInfo {
+  padding: 28px;
+}
+
+.featureTag {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.featureName {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+
+.featureDesc {
+  font-size: 14px;
+  color: var(--muted2);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.featurePrice {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+/* Pizza grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+}
+
+.card {
+  position: relative;
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+.card:hover,
+.cardActive {
+  border-color: var(--border2);
+  transform: translateY(-4px);
+  z-index: 2;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.cardImg {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.cardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImg img,
+.cardActive .cardImg img {
+  transform: scale(1.08);
+}
+
+.cardImgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(24,24,24,0.8) 100%);
+}
+
+.cardContent {
+  padding: 20px;
+}
+
+.cardNum {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 6px;
+  opacity: 0.7;
+}
+
+.cardName {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+
+.cardDesc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+  font-weight: 300;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTag {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+}
+
+.cardPrice {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+/* Banner */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-top: 64px;
+  background: rgba(201,168,76,0.05);
+  border: 1px solid var(--border);
+  padding: 0;
+}
+
+.bannerItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 36px;
+  flex: 1;
+  transition: background 0.3s;
+}
+
+.bannerItem:hover { background: rgba(201,168,76,0.06); }
+
+.bannerIcon {
+  font-size: 28px;
+  flex-shrink: 0;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+}
+
+.bannerTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+
+.bannerDesc {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.bannerDivider {
+  width: 1px;
+  height: 60px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1100px) {
+  .showcase { grid-template-columns: 1fr; }
+  .featureCard { position: static; display: none; }
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .banner { flex-direction: column; }
+  .bannerDivider { width: 80%; height: 1px; }
+  .bannerItem { width: 100%; }
+}

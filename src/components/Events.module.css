@@ -1,0 +1,272 @@
+.events {}
+
+.header {
+  margin-bottom: 64px;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: all 0.85s cubic-bezier(0.16,1,0.3,1);
+}
+
+.header.inView { opacity: 1; transform: translateY(0); }
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.tag span {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+.tagLine { width: 40px; height: 1px; background: var(--gold); }
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+
+.title em { font-style: italic; color: var(--gold); }
+
+.subtitle {
+  font-size: 16px;
+  color: var(--muted2);
+  font-weight: 300;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Featured */
+.featured {
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: all 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+
+.featured.inView { opacity: 1; transform: translateY(0); }
+
+.featuredImg {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+
+.featuredImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.featured:hover .featuredImg img { transform: scale(1.04); }
+
+.featuredOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);
+}
+
+.featuredContent {
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  border-top: none;
+  padding: 32px;
+}
+
+.featuredDate {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.featuredDay {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.featuredMonth {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: var(--muted);
+  letter-spacing: 3px;
+}
+
+.featuredYear {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.featuredTag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 5px 12px;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.featuredTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+
+.featuredDesc {
+  font-size: 15px;
+  color: var(--muted2);
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.featuredBtn {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--dark);
+  border: none;
+  padding: 14px 28px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+
+.featuredBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(201,168,76,0.35);
+}
+
+/* Event list */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.eventCard {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0;
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(32px);
+  transition: all 0.7s cubic-bezier(0.16,1,0.3,1);
+  cursor: pointer;
+}
+
+.eventCard.inView { opacity: 1; transform: translateX(0); }
+
+.eventCard:hover {
+  border-color: var(--border2);
+  transform: translateX(0) translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+.eventImgWrap {
+  height: 100%;
+  min-height: 120px;
+  overflow: hidden;
+}
+
+.eventImgWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.eventCard:hover .eventImgWrap img { transform: scale(1.1); }
+
+.eventBody {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.eventDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.eventDay {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.eventMonth {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--muted);
+}
+
+.eventInfo { flex: 1; }
+
+.eventTag {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.eventTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+
+.eventDesc {
+  font-size: 13px;
+  color: var(--muted2);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .eventCard { grid-template-columns: 80px 1fr; }
+  .eventBody { padding: 16px; gap: 12px; }
+}

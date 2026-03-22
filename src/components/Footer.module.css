@@ -1,0 +1,250 @@
+.footer {
+  background: #060606;
+  border-top: 1px solid rgba(201,168,76,0.08);
+}
+
+/* CTA Banner */
+.ctaBanner {
+  background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(193,18,31,0.05) 100%);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+
+.ctaContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.ctaTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.ctaSub {
+  font-size: 15px;
+  color: var(--muted2);
+  font-weight: 300;
+  max-width: 440px;
+}
+
+.ctaActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.ctaBtn {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--dark);
+  border: none;
+  padding: 15px 40px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  white-space: nowrap;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(201,168,76,0.4);
+}
+
+.ctaPhone {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.ctaPhone:hover { color: var(--gold); }
+
+/* Main */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 72px 80px 32px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+  gap: 60px;
+  margin-bottom: 64px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid rgba(201,168,76,0.07);
+}
+
+/* Brand */
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--gold), var(--gold2), var(--gold3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2px;
+}
+
+.logoSub {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.brandDesc {
+  font-size: 14px;
+  color: var(--muted2);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(201,168,76,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.social:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201,168,76,0.06);
+}
+
+/* Columns */
+.colTitle {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: var(--font-body);
+}
+
+.colLinks { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+.colLink {
+  background: none;
+  border: none;
+  color: var(--muted2);
+  font-family: var(--font-body);
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: color 0.3s;
+}
+
+.colLink:hover { color: var(--gold); }
+
+/* Hours */
+.hours { display: flex; flex-direction: column; gap: 10px; }
+
+.hourRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--muted2);
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(201,168,76,0.06);
+  gap: 12px;
+}
+
+.hourClosed { color: rgba(193,18,31,0.8) !important; }
+.hourClosed span { color: rgba(193,18,31,0.8); }
+
+/* Contacts */
+.contacts { display: flex; flex-direction: column; gap: 10px; }
+
+.contactItem {
+  font-size: 14px;
+  color: var(--muted2);
+  text-decoration: none;
+  transition: color 0.3s;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.contactItem svg { flex-shrink: 0; margin-top: 2px; }
+.contactItem:hover { color: var(--gold); }
+
+/* Bottom */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.bottomLeft {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+}
+
+.bottomRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.legalLink {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+.legalLink:hover { color: var(--gold); }
+
+.legalDot { color: rgba(201,168,76,0.3); }
+
+@media (max-width: 1100px) {
+  .top { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .ctaContent { padding: 40px 28px; flex-direction: column; text-align: center; }
+  .ctaSub { margin: 0 auto; }
+  .main { padding: 48px 28px 24px; }
+  .top { grid-template-columns: 1fr; gap: 32px; }
+  .bottom { flex-direction: column; align-items: flex-start; }
+}

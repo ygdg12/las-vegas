@@ -1,0 +1,323 @@
+.contact {}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: all 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+
+.inner.inView { opacity: 1; transform: translateY(0); }
+
+/* Info */
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.tag span {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+.tagLine { width: 40px; height: 1px; background: var(--gold); }
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.title em { font-style: italic; color: var(--gold); }
+
+.subtitle {
+  font-size: 16px;
+  color: var(--muted2);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.details { margin-bottom: 40px; }
+
+.detailItem {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  transition: padding-left 0.3s;
+}
+
+.detailItem:hover { padding-left: 6px; }
+
+.detailIcon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: rgba(201,168,76,0.06);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+
+.detailLabel {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.detailValue {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+.detailValue a {
+  transition: color 0.3s;
+}
+
+.detailValue a:hover { color: var(--gold); }
+
+.closed { color: var(--red) !important; }
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--dark);
+  border: none;
+  padding: 14px 28px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(201,168,76,0.4);
+}
+
+.mapBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border2);
+  padding: 14px 28px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.mapBtn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Social */
+.social {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  color: var(--muted2);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.socialBtn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Map side */
+.mapSide { display: flex; flex-direction: column; gap: 20px; }
+
+.mapImg {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.mapImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.mapImg:hover img { transform: scale(1.04); }
+
+.mapOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(10,10,10,0.7) 100%);
+}
+
+.mapBadge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border2);
+  padding: 12px 16px;
+}
+
+.mapPin { font-size: 22px; }
+
+.mapBadgeName {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.mapBadgeAddr {
+  font-size: 12px;
+  color: var(--muted2);
+}
+
+/* Map frame (decorative) */
+.mapFrame {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mapFrameInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.mapDot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: var(--gold);
+  border-radius: 50%;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  box-shadow: 0 0 0 4px rgba(201,168,76,0.2);
+}
+
+.mapRipple {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.3);
+  animation: ripple 2.5s ease-out infinite;
+}
+
+@keyframes ripple {
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
+
+.mapLabel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 20px;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.mapLabelName {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: 2px;
+}
+
+.mapLabelAddr {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.mapLink {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.mapLink:hover { opacity: 0.75; }
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; gap: 48px; }
+}
