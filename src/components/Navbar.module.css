@@ -197,6 +197,12 @@
   box-shadow: 0 12px 40px rgba(201, 168, 76, 0.4);
 }
 
+/* Short labels hidden on wide screens (shown with nav links) */
+.langLabelShort,
+.bookBtnLabelShort {
+  display: none;
+}
+
 /* Burger */
 .burger {
   display: none;
@@ -278,17 +284,117 @@
 @media (max-width: 1024px) {
   .links { display: none; }
   .topBarInner { font-size: 11px; gap: 10px; }
+
+  /* Compact language + booking when nav links collapse */
+  .langLabelFull,
+  .bookBtnLabelFull {
+    display: none;
+  }
+  .langLabelShort,
+  .bookBtnLabelShort {
+    display: inline;
+  }
+
+  .navActions {
+    gap: 10px;
+  }
+
+  .langPicker {
+    gap: 3px;
+    padding: 4px 6px;
+  }
+
+  .langBtn {
+    font-size: 11px;
+    padding: 6px 9px;
+    letter-spacing: 0.5px;
+  }
+
+  .bookBtn {
+    padding: 9px 16px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
 }
 
 @media (max-width: 768px) {
-  .mainNav { padding: 0 24px; }
-  .scrolled .mainNav { padding: 0 24px; }
+  .mainNav {
+    padding: 0 12px;
+    height: 64px;
+    min-height: 64px;
+  }
+  .scrolled .mainNav {
+    padding: 0 12px;
+    height: 56px;
+    min-height: 56px;
+  }
+
+  .logoImg {
+    height: 28px;
+  }
+
+  .logoSub {
+    font-size: 7px;
+    letter-spacing: 2px;
+    max-width: 120px;
+    line-height: 1.2;
+  }
+
   .burger { display: flex; }
   .mobileMenu { display: flex; }
-  .langPicker { gap: 4px; padding: 6px 6px; }
-  .langBtn { font-size: 11px; padding: 7px 8px; letter-spacing: 0.6px; }
+
+  .navActions {
+    gap: 6px;
+  }
+
+  .langPicker {
+    gap: 2px;
+    padding: 3px 4px;
+  }
+
+  .langBtn {
+    font-size: 10px;
+    padding: 5px 7px;
+    letter-spacing: 0.35px;
+  }
+
+  .bookBtn {
+    padding: 7px 10px;
+    font-size: 10.5px;
+    letter-spacing: 0.5px;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  }
+
   .topBarSep { display: none; }
   .topBarInner span:nth-child(3),
   .topBarInner span:nth-child(4),
   .topBarInner a { display: none; }
+}
+
+@media (max-width: 380px) {
+  .mainNav {
+    padding: 0 8px;
+  }
+  .scrolled .mainNav {
+    padding: 0 8px;
+  }
+
+  .navActions {
+    gap: 4px;
+  }
+
+  .langBtn {
+    font-size: 9.5px;
+    padding: 4px 6px;
+  }
+
+  .bookBtn {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  .logoSub {
+    display: none;
+  }
 }

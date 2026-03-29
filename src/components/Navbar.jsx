@@ -9,17 +9,23 @@ import { useLang } from '../i18n/LanguageContext.jsx'
 const LANG_LABELS = {
   it: {
     booking: 'Prenota Tavolo',
+    bookingNavShort: 'Prenota',
     bookingMobile: '🍽️ Prenota un Tavolo',
     topLang: 'Lingua',
     langIt: 'Italian',
     langEn: 'English',
+    langItShort: 'IT',
+    langEnShort: 'EN',
   },
   en: {
     booking: 'Book a Table',
+    bookingNavShort: 'Book',
     bookingMobile: '🍽️ Book a Table',
     topLang: 'Language',
     langIt: 'Italian',
     langEn: 'English',
+    langItShort: 'IT',
+    langEnShort: 'EN',
   },
 }
 
@@ -96,19 +102,24 @@ export default function Navbar({ onBooking }) {
                 type="button"
                 className={`${styles.langBtn} ${lang === 'it' ? styles.langBtnActive : ''}`}
                 onClick={() => setLang('it')}
+                aria-label={LANG_LABELS[lang].langIt}
               >
-                {LANG_LABELS[lang].langIt}
+                <span className={styles.langLabelFull}>{LANG_LABELS[lang].langIt}</span>
+                <span className={styles.langLabelShort}>{LANG_LABELS[lang].langItShort}</span>
               </button>
               <button
                 type="button"
                 className={`${styles.langBtn} ${lang === 'en' ? styles.langBtnActive : ''}`}
                 onClick={() => setLang('en')}
+                aria-label={LANG_LABELS[lang].langEn}
               >
-                {LANG_LABELS[lang].langEn}
+                <span className={styles.langLabelFull}>{LANG_LABELS[lang].langEn}</span>
+                <span className={styles.langLabelShort}>{LANG_LABELS[lang].langEnShort}</span>
               </button>
             </div>
-            <button className={styles.bookBtn} onClick={onBooking}>
-              {LANG_LABELS[lang].booking}
+            <button type="button" className={styles.bookBtn} onClick={onBooking}>
+              <span className={styles.bookBtnLabelFull}>{LANG_LABELS[lang].booking}</span>
+              <span className={styles.bookBtnLabelShort}>{LANG_LABELS[lang].bookingNavShort}</span>
             </button>
             <button
               className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ''}`}
