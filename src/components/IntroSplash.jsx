@@ -4,10 +4,8 @@ import { IMAGES } from '../assets/images.js'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import styles from './IntroSplash.module.css'
 
-const STORAGE_KEY = 'lv_intro_seen'
-
-/** Visible hold before curtain exit — at least 3s (longer when more copy). */
-const HOLD_MS = { full: 4200, reduced: 3000 }
+/** Time overlay stays up before curtain exit (every load / refresh). */
+const HOLD_MS = 2000
 
 const COPY = {
   it: {
@@ -22,18 +20,10 @@ const COPY = {
   },
 }
 
-function introAlreadySeen() {
-  try {
-    return sessionStorage.getItem(STORAGE_KEY) === '1'
-  } catch {
-    return false
-  }
-}
-
 export default function IntroSplash() {
   const { lang } = useLang()
-  const [finished, setFinished] = useState(introAlreadySeen)
-  const [visible, setVisible] = useState(() => !introAlreadySeen())
+  const [finished, setFinished] = useState(false)
+  const [visible, setVisible] = useState(true)
   const [reduceMotion, setReduceMotion] = useState(false)
 
   const text = COPY[lang] ?? COPY.it
@@ -57,17 +47,11 @@ export default function IntroSplash() {
 
   useEffect(() => {
     if (finished || !visible) return
-    const hold = reduceMotion ? HOLD_MS.reduced : HOLD_MS.full
-    const id = window.setTimeout(() => setVisible(false), hold)
+    const id = window.setTimeout(() => setVisible(false), HOLD_MS)
     return () => window.clearTimeout(id)
-  }, [finished, visible, reduceMotion])
+  }, [finished, visible])
 
   const onExitComplete = () => {
-    try {
-      sessionStorage.setItem(STORAGE_KEY, '1')
-    } catch {
-      /* ignore */
-    }
     setFinished(true)
   }
 
