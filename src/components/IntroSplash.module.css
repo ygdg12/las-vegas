@@ -1,0 +1,115 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse 120% 80% at 50% 100%, #1a0a14 0%, #060508 45%, #030203 100%);
+  overflow: hidden;
+}
+
+.overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 45, 120, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 70% 80%, rgba(5, 217, 232, 0.06) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(201, 168, 76, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 168, 76, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+  max-width: min(92vw, 720px);
+}
+
+.logoRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.12em 0.28em;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 14vw, 8.5rem);
+  line-height: 0.92;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.wordLas {
+  color: #fff5f8;
+  animation: neonPulseLas 2.8s ease-in-out infinite;
+}
+
+.wordVegas {
+  color: #f0ffff;
+  animation: neonPulseVegas 2.8s ease-in-out infinite 0.15s;
+}
+
+@keyframes neonPulseLas {
+  0%,
+  100% {
+    text-shadow: 0 0 8px #ff2a6d, 0 0 20px #ff2a6d, 0 0 40px rgba(255, 42, 109, 0.55),
+      0 0 72px rgba(255, 42, 109, 0.25);
+  }
+  50% {
+    text-shadow: 0 0 12px #ff5a8d, 0 0 28px #ff2a6d, 0 0 56px rgba(255, 42, 109, 0.65),
+      0 0 96px rgba(255, 42, 109, 0.35);
+  }
+}
+
+@keyframes neonPulseVegas {
+  0%,
+  100% {
+    text-shadow: 0 0 8px #2de8f0, 0 0 20px #05d9e8, 0 0 40px rgba(5, 217, 232, 0.5),
+      0 0 72px rgba(5, 217, 232, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 12px #5af0f7, 0 0 28px #05d9e8, 0 0 56px rgba(5, 217, 232, 0.6),
+      0 0 96px rgba(5, 217, 232, 0.3);
+  }
+}
+
+.slogan {
+  margin-top: clamp(1.25rem, 4vw, 2rem);
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 3.2vw, 1.65rem);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.28em;
+  text-transform: lowercase;
+  color: rgba(245, 240, 232, 0.92);
+  text-shadow: 0 0 20px rgba(201, 168, 76, 0.35), 0 0 40px rgba(201, 168, 76, 0.15);
+}
+
+.line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(255, 42, 109, 0.5), rgba(5, 217, 232, 0.5), transparent);
+  opacity: 0.85;
+  filter: blur(0.5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wordLas,
+  .wordVegas {
+    animation: none;
+    text-shadow: 0 0 12px #ff2a6d, 0 0 28px rgba(255, 42, 109, 0.45), 0 0 12px #05d9e8,
+      0 0 28px rgba(5, 217, 232, 0.4);
+  }
+}

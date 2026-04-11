@@ -11,6 +11,7 @@ import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import BookingModal from './components/BookingModal.jsx'
 import Cursor from './components/Cursor.jsx'
+import IntroSplash from './components/IntroSplash.jsx'
 import { IconChevronUp } from './components/Icons.jsx'
 import { LanguageProvider } from './i18n/LanguageContext.jsx'
 import { Toaster } from 'react-hot-toast'
@@ -30,6 +31,7 @@ export default function App() {
   return (
     <LanguageProvider>
       <>
+        <IntroSplash />
         <Toaster
           position="top-center"
           toastOptions={{
