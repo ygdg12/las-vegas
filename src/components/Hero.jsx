@@ -115,9 +115,14 @@ export default function Hero({ onBooking }) {
             <span>{lang === 'en' ? 'Book a Table' : 'Prenota un Tavolo'}</span>
             <IconArrowRight size={16} />
           </button>
-          <button className={styles.secondaryBtn} onClick={() => document.querySelector('#grillata')?.scrollIntoView({ behavior: 'smooth' })}>
-            Grilliata di pesce
-          </button>
+          <a
+            className={styles.secondaryBtn}
+            href="https://lasvegas-menu.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {lang === 'en' ? 'Discover the Menu' : 'Scopri il Menù'}
+          </a>
         </div>
 
         {/* Ratings strip */}
