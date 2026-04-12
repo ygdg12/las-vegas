@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
 import Pizze from './components/Pizze.jsx'
+import AdriaticFish from './components/AdriaticFish.jsx'
 import Gallery from './components/Gallery.jsx'
 import GrilliataDiPesce from './components/GrilliataDiPesce.jsx'
 import Reviews from './components/Reviews.jsx'
@@ -50,6 +51,7 @@ export default function App() {
           <Hero onBooking={() => setBookingOpen(true)} />
           <About />
           <Pizze />
+          <AdriaticFish />
           <GrilliataDiPesce />
           <Gallery />
           <Reviews />

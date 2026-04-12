@@ -4,7 +4,6 @@ export const NAV_ITEMS = [
   { label: 'Home', href: '#home' },
   { label: 'Azienda', href: '#azienda' },
   { label: 'Pizze', href: '#pizze' },
-  { label: 'Grilliata di pesce', href: '#grillata' },
   { label: 'Galleria', href: '#galleria' },
   { label: 'Contatti', href: '#contatti' },
 ]

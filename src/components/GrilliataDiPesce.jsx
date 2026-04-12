@@ -56,21 +56,16 @@ export default function GrilliataDiPesce() {
           </div>
 
           <div className={styles.colVideo}>
-            <div className={styles.videoFrame}>
-              <div className={styles.videoInner}>
-                <span className={`${styles.cornerAccent} ${styles.cornerAccentTL}`} aria-hidden />
-                <span className={`${styles.cornerAccent} ${styles.cornerAccentBR}`} aria-hidden />
-                <video
-                  className={styles.video}
-                  controls
-                  playsInline
-                  preload="metadata"
-                  aria-label={lang === 'en' ? 'Grilliata di pesce video' : 'Video Grilliata di pesce'}
-                >
-                  <source src={VIDEO_SRC} type="video/mp4" />
-                </video>
-              </div>
-              <div className={styles.videoRim} aria-hidden />
+            <div className={styles.videoShell}>
+              <video
+                className={styles.video}
+                controls
+                playsInline
+                preload="metadata"
+                aria-label={lang === 'en' ? 'Grilliata di pesce video' : 'Video Grilliata di pesce'}
+              >
+                <source src={VIDEO_SRC} type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>

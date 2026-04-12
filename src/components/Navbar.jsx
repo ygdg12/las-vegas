@@ -33,14 +33,12 @@ const NAV_LABELS = {
   it: {
     '#home': 'Home',
     '#pizze': 'Pizze',
-    '#grillata': 'Grilliata di pesce',
     '#galleria': 'Galleria',
     '#contatti': 'Contatti',
   },
   en: {
     '#home': 'Home',
     '#pizze': 'Pizzas',
-    '#grillata': 'Grilliata di pesce',
     '#galleria': 'Gallery',
     '#contatti': 'Contact',
   },
