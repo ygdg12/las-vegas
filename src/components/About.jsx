@@ -1,5 +1,6 @@
 import { useInView } from '../hooks/useInView.js'
 import { IMAGES } from '../assets/images.js'
+import storiesSeafoodPasta from '../assets/about/stories-seafood-pasta.png'
 import { IconFlame, IconFish, IconUtensils, IconWine } from './Icons.jsx'
 import styles from './About.module.css'
 import { useLang } from '../i18n/LanguageContext.jsx'
@@ -107,6 +108,23 @@ export default function About() {
               </div>
             ))}
           </div>
+
+          <figure className={styles.storyPhoto}>
+            <img
+              src={storiesSeafoodPasta}
+              alt={
+                lang === 'en'
+                  ? 'Seafood pasta with prawns, clams, and calamari'
+                  : 'Pasta di mare con gamberi, vongole e calamari'
+              }
+              loading="lazy"
+              decoding="async"
+              className={styles.storyPhotoImg}
+            />
+            <figcaption className={styles.storyPhotoCap}>
+              {lang === 'en' ? 'From our kitchen · Adriatic flavors' : 'Dalla nostra cucina · Sapori adriatici'}
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>

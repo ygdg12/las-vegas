@@ -1,19 +1,23 @@
 import { useInView } from '../hooks/useInView.js'
-import { IMAGES } from '../assets/images.js'
 import scampiFresh from '../assets/adriatic/scampi-fresh.png'
 import grilledScampi from '../assets/adriatic/grilled-scampi.png'
 import styles from './AdriaticFish.module.css'
 import { useLang } from '../i18n/LanguageContext.jsx'
 
-/** In-house photos + themed placeholders (drop more PNGs in `src/assets/adriatic/` to replace). */
-const SPAN_CLASS = { tall: 'spanTall', wide: 'spanWide', std: 'spanStd' }
-
+/** Your photos from `src/assets/adriatic/` (add more PNGs here to extend the mosaic). */
 const TILES = [
-  { id: 'a', src: scampiFresh, span: 'tall', altIt: 'Scampi freschi', altEn: 'Fresh langoustines' },
-  { id: 'b', src: grilledScampi, span: 'wide', altIt: 'Scampi alla griglia', altEn: 'Grilled langoustines' },
-  { id: 'c', src: IMAGES.seafoodPlate, span: 'std', altIt: 'Grigliata di pesce', altEn: 'Grilled seafood platter' },
-  { id: 'd', src: IMAGES.fishGrill, span: 'std', altIt: 'Pesce alla griglia', altEn: 'Fish from the grill' },
-  { id: 'e', src: IMAGES.shrimp, span: 'std', altIt: 'Gamberi', altEn: 'Shrimp' },
+  {
+    id: 'fresh',
+    src: scampiFresh,
+    altIt: 'Scampi freschi dell\u2019Adriatico',
+    altEn: 'Fresh Adriatic langoustines',
+  },
+  {
+    id: 'grill',
+    src: grilledScampi,
+    altIt: 'Scampi alla griglia',
+    altEn: 'Grilled langoustines',
+  },
 ]
 
 const COPY = {
@@ -52,8 +56,8 @@ export default function AdriaticFish() {
           {TILES.map((tile, i) => (
             <figure
               key={tile.id}
-              className={`${styles.tile} ${styles[SPAN_CLASS[tile.span]]}`}
-              style={{ transitionDelay: `${0.06 + i * 0.05}s` }}
+              className={styles.tile}
+              style={{ transitionDelay: `${0.06 + i * 0.08}s` }}
             >
               <img
                 src={tile.src}
