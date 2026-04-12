@@ -3,9 +3,8 @@ import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
 import Pizze from './components/Pizze.jsx'
-import Menu from './components/Menu.jsx'
 import Gallery from './components/Gallery.jsx'
-import Events from './components/Events.jsx'
+import GrilliataDiPesce from './components/GrilliataDiPesce.jsx'
 import Reviews from './components/Reviews.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
@@ -51,9 +50,8 @@ export default function App() {
           <Hero onBooking={() => setBookingOpen(true)} />
           <About />
           <Pizze />
-          <Menu />
+          <GrilliataDiPesce />
           <Gallery />
-          <Events />
           <Reviews />
           <Contact onBooking={() => setBookingOpen(true)} />
         </main>

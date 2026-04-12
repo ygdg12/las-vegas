@@ -5,7 +5,7 @@ import { useLang } from '../i18n/LanguageContext.jsx'
 import styles from './IntroSplash.module.css'
 
 /** Time overlay stays up before curtain exit (every load / refresh). */
-const HOLD_MS = 2000
+const HOLD_MS = 3500
 
 const COPY = {
   it: {

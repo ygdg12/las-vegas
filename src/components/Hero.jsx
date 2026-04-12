@@ -115,8 +115,8 @@ export default function Hero({ onBooking }) {
             <span>{lang === 'en' ? 'Book a Table' : 'Prenota un Tavolo'}</span>
             <IconArrowRight size={16} />
           </button>
-          <button className={styles.secondaryBtn} onClick={() => document.querySelector('#menu')?.scrollIntoView({ behavior: 'smooth' })}>
-            {lang === 'en' ? 'Discover the Menu' : 'Scopri il Menù'}
+          <button className={styles.secondaryBtn} onClick={() => document.querySelector('#grillata')?.scrollIntoView({ behavior: 'smooth' })}>
+            Grilliata di pesce
           </button>
         </div>
 

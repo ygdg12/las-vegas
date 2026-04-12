@@ -1,0 +1,111 @@
+.section {
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  opacity: 0;
+  transform: translateY(32px);
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header.inView {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.tag span {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+.tagLine {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--muted2);
+  font-weight: 300;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.videoWrap {
+  max-width: 920px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.videoWrap.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.videoFrame {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border2);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(201, 168, 76, 0.08);
+  background: var(--dark3);
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cornerAccent {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cornerAccentTL {
+  top: 12px;
+  left: 12px;
+  border-top: 1px solid rgba(201, 168, 76, 0.35);
+  border-left: 1px solid rgba(201, 168, 76, 0.35);
+}
+
+.cornerAccentBR {
+  bottom: 12px;
+  right: 12px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+  border-right: 1px solid rgba(201, 168, 76, 0.35);
+}

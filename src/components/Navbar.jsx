@@ -32,18 +32,16 @@ const LANG_LABELS = {
 const NAV_LABELS = {
   it: {
     '#home': 'Home',
-    '#menu': 'Menù',
     '#pizze': 'Pizze',
+    '#grillata': 'Grilliata di pesce',
     '#galleria': 'Galleria',
-    '#eventi': 'Eventi',
     '#contatti': 'Contatti',
   },
   en: {
     '#home': 'Home',
-    '#menu': 'Menu',
     '#pizze': 'Pizzas',
+    '#grillata': 'Grilliata di pesce',
     '#galleria': 'Gallery',
-    '#eventi': 'Events',
     '#contatti': 'Contact',
   },
 }

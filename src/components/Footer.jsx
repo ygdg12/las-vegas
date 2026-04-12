@@ -14,19 +14,17 @@ export default function Footer({ onBooking }) {
     it: {
       '#home': 'Home',
       '#azienda': 'Azienda',
-      '#menu': 'Menù',
       '#pizze': 'Pizze',
+      '#grillata': 'Grilliata di pesce',
       '#galleria': 'Galleria',
-      '#eventi': 'Eventi',
       '#contatti': 'Contatti',
     },
     en: {
       '#home': 'Home',
       '#azienda': 'About Us',
-      '#menu': 'Menu',
       '#pizze': 'Pizzas',
+      '#grillata': 'Grilliata di pesce',
       '#galleria': 'Gallery',
-      '#eventi': 'Events',
       '#contatti': 'Contact',
     },
   }
