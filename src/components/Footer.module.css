@@ -91,15 +91,12 @@
 }
 
 /* Brand */
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  font-style: italic;
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--gold), var(--gold2), var(--gold3));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 2px;
+.logoImg {
+  display: block;
+  width: clamp(180px, 22vw, 240px);
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 6px;
 }
 
 .logoSub {

@@ -44,8 +44,9 @@
 
 .mosaic {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(14px, 2.5vw, 22px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: clamp(180px, 24vw, 240px);
+  gap: 6px;
   margin-bottom: clamp(36px, 6vw, 56px);
   opacity: 0;
   transform: translateY(20px);
@@ -61,19 +62,27 @@
   position: relative;
   margin: 0;
   overflow: hidden;
-  border-radius: 12px;
-  background: var(--dark3);
-  aspect-ratio: 3 / 4;
-  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(201, 168, 76, 0.1);
+  border-radius: 0;
+  background: #090909;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tile::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(6, 6, 8, 0.82) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.76) 0%, transparent 52%);
   pointer-events: none;
-  opacity: 0.9;
+  opacity: 0.72;
+  transition: opacity 0.35s ease;
+}
+
+.mosaicInView .tile {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .tileImg {
@@ -82,27 +91,34 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  transform: scale(1.02);
-  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tile:hover .tileImg {
-  transform: scale(1.05);
+  transform: scale(1.07);
+}
+
+.tile:hover::after {
+  opacity: 1;
 }
 
 .tileCap {
   position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
   z-index: 1;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(245, 240, 232, 0.95);
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(15px, 1.8vw, 19px);
+  font-style: italic;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.tile:nth-child(1),
+.tile:nth-child(4) {
+  grid-column: span 2;
 }
 
 .prose {
@@ -135,10 +151,10 @@
 @media (max-width: 640px) {
   .mosaic {
     grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
   }
 
   .tile {
-    aspect-ratio: 4 / 5;
-    max-height: min(72vh, 520px);
+    grid-column: span 1 !important;
   }
 }

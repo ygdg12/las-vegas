@@ -1,5 +1,6 @@
 import { RESTAURANT_INFO, NAV_ITEMS } from '../assets/data.js'
 import { IconFacebook, IconCompass, IconUtensils, IconPhone, IconMobile, IconMail, IconMapPin, IconClock } from './Icons.jsx'
+import { IMAGES } from '../assets/images.js'
 import styles from './Footer.module.css'
 import { useLang } from '../i18n/LanguageContext.jsx'
 
@@ -57,7 +58,7 @@ export default function Footer({ onBooking }) {
         <div className={styles.top}>
           {/* Brand */}
           <div className={styles.brand}>
-            <div className={styles.logo}>Las Vegas</div>
+            <img className={styles.logoImg} src={IMAGES.logoNeon} alt="Las Vegas" />
             <div className={styles.logoSub}>{lang === 'en' ? 'Restaurant Pizzeria' : 'Ristorante Pizzeria'}</div>
             <p className={styles.brandDesc}>
               {lang === 'en'
