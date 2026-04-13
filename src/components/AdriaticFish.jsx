@@ -1,6 +1,10 @@
 import { useInView } from '../hooks/useInView.js'
 import scampiFresh from '../assets/adriatic/scampi-fresh.png'
 import grilledScampi from '../assets/adriatic/grilled-scampi.png'
+import adriaticFresh1 from '../assets/adriatic/adriatic-fresh-1.png'
+import adriaticFresh2 from '../assets/adriatic/adriatic-fresh-2.png'
+import adriaticFresh3 from '../assets/adriatic/adriatic-fresh-3.png'
+import adriaticFresh4 from '../assets/adriatic/adriatic-fresh-4.png'
 import styles from './AdriaticFish.module.css'
 import { useLang } from '../i18n/LanguageContext.jsx'
 
@@ -17,6 +21,30 @@ const TILES = [
     src: grilledScampi,
     altIt: 'Scampi alla griglia',
     altEn: 'Grilled langoustines',
+  },
+  {
+    id: 'fresh-catch',
+    src: adriaticFresh1,
+    altIt: 'Pesce fresco dell’Adriatico',
+    altEn: 'Fresh fish from the Adriatic',
+  },
+  {
+    id: 'raw-scampi',
+    src: adriaticFresh2,
+    altIt: 'Scampi freschissimi',
+    altEn: 'Very fresh langoustines',
+  },
+  {
+    id: 'baked-seabass',
+    src: adriaticFresh3,
+    altIt: 'Spigola al forno con patate',
+    altEn: 'Baked seabass with potatoes',
+  },
+  {
+    id: 'seafood-platter',
+    src: adriaticFresh4,
+    altIt: 'Grigliata mista di mare',
+    altEn: 'Mixed seafood grill platter',
   },
 ]
 

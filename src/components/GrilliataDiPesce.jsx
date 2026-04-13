@@ -1,8 +1,24 @@
 import { useInView } from '../hooks/useInView.js'
 import styles from './GrilliataDiPesce.module.css'
 import { useLang } from '../i18n/LanguageContext.jsx'
+import grillataPlatter1 from '../assets/grillata/grillata-platter-1.png'
+import grillataPlatter2 from '../assets/grillata/grillata-platter-2.png'
 
 const VIDEO_SRC = '/videos/grillata-pesce.mp4'
+const GRILLATA_PHOTOS = [
+  {
+    id: 'platter-1',
+    src: grillataPlatter1,
+    altIt: 'Grigliata mista di pesce',
+    altEn: 'Mixed seafood grill',
+  },
+  {
+    id: 'platter-2',
+    src: grillataPlatter2,
+    altIt: 'Dettaglio grigliata di pesce',
+    altEn: 'Seafood grill close-up',
+  },
+]
 
 const COPY = {
   it: {
@@ -69,6 +85,19 @@ export default function GrilliataDiPesce() {
               >
                 <source src={VIDEO_SRC} type="video/mp4" />
               </video>
+            </div>
+            <div className={styles.photoGrid}>
+              {GRILLATA_PHOTOS.map((photo) => (
+                <figure key={photo.id} className={styles.photoCard}>
+                  <img
+                    src={photo.src}
+                    alt={lang === 'en' ? photo.altEn : photo.altIt}
+                    loading="lazy"
+                    decoding="async"
+                    className={styles.photoImg}
+                  />
+                </figure>
+              ))}
             </div>
           </div>
         </div>
