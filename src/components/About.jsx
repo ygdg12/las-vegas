@@ -36,7 +36,14 @@ export default function About() {
             <div className={styles.imgMainOverlay} />
           </div>
           <div className={styles.imgSecond}>
-            <img src={IMAGES.chefPizza} alt="Il nostro pizzaiolo" />
+            <img
+              src={storiesSeafoodPasta}
+              alt={
+                lang === 'en'
+                  ? 'Seafood pasta with prawns, clams, and calamari'
+                  : 'Pasta di mare con gamberi, vongole e calamari'
+              }
+            />
           </div>
           <div className={styles.badge}>
             <span className={styles.badgeYear}>2015</span>
@@ -109,22 +116,6 @@ export default function About() {
             ))}
           </div>
 
-          <figure className={styles.storyPhoto}>
-            <img
-              src={storiesSeafoodPasta}
-              alt={
-                lang === 'en'
-                  ? 'Seafood pasta with prawns, clams, and calamari'
-                  : 'Pasta di mare con gamberi, vongole e calamari'
-              }
-              loading="lazy"
-              decoding="async"
-              className={styles.storyPhotoImg}
-            />
-            <figcaption className={styles.storyPhotoCap}>
-              {lang === 'en' ? 'From our kitchen · Adriatic flavors' : 'Dalla nostra cucina · Sapori adriatici'}
-            </figcaption>
-          </figure>
         </div>
       </div>
     </section>

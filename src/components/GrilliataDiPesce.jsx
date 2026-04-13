@@ -60,6 +60,9 @@ export default function GrilliataDiPesce() {
               <video
                 className={styles.video}
                 controls
+                autoPlay
+                muted
+                loop
                 playsInline
                 preload="metadata"
                 aria-label={lang === 'en' ? 'Grilliata di pesce video' : 'Video Grilliata di pesce'}
